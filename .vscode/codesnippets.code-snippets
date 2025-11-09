@@ -1,0 +1,169 @@
+{
+  "Pymdownx Snippet Section": {
+    "prefix": "sec8",
+    "scope": "markdown",
+    "body": [
+      "<!--8<-- [start:${1:section-name}]-->",
+      "",
+      "$0",
+      "",
+      "<!--8<-- [end:${1}]-->"
+    ],
+    "description": "Insert pymdownx snippet section markers"
+  },
+  "Mermaid GitGraph Config": {
+    "prefix": "gitgraphconfig",
+    "body": [
+      "```mermaid",
+      "gitGraph",
+      "%% --- CONFIG OPTIONS ---",
+      "config:",
+      "  logLevel: 'debug'           %% Options: debug, info, warn, error",
+      "  theme: 'neutral'            %% Options: default, neutral, forest, dark, base, null",
+      "  orientation: 'horizontal'   %% Options: horizontal, vertical",
+      "  nodeSpacing: 50             %% Distance between commits",
+      "  nodeRadius: 5               %% Radius of commit dots",
+      "  nodeStrokeWidth: 2          %% Width of commit dot outline",
+      "  nodeColor: '#2196f3'        %% Default node color if branch color not specified",
+      "  arrowSize: 1.5              %% Size of arrows for merges",
+      "  mainBranchName: 'main'      %% Name of default main branch",
+      "---",
+      "$0",
+      "```"
+    ],
+    "description": "Insert default gitGraph config block with all available options; start diagram after ---"
+  },
+"Docusaurus Metadata Extended": {
+    "prefix": "docusaurus-meta",
+    "body": [
+      "---",
+      "id: ${1:${TM_FILENAME_BASE}}",
+      "title: ${2:My Document Title}",
+      "description: ${3:Short summary for SEO and sidebar}",
+      "slug: /${1}",
+      "sidebar_label: ${4:${TM_FILENAME_BASE}}",
+      "sidebar_position: ${5:1}",
+      "author: ${6: Nihad Nagi}",
+      "version: ${7:0.1.0}",
+      "last_modified: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}",
+      "save_count: ${8:1}", 
+      "file_name: ${TM_FILENAME}",
+      "file_path: ${RELATIVE_FILEPATH}",
+      "tags:",
+      "  - ${9:guide}",
+      "  - ${10:reference}",
+      "draft: false",
+      "hide_title: false",
+      "hide_table_of_contents: false",
+      "pagination_prev: null",
+      "pagination_next: null",
+      "toc_min_heading_level: 2",
+      "toc_max_heading_level: 5",
+      "keywords:",
+      "  - ${11:keyword1}",
+      "  - ${12:keyword2}",
+      "image: /img/cover.png",
+      "---",
+      "",
+      "${13:<!-- Write content below -->}"
+    ],
+    "description": "Insert Docusaurus markdown metadata block with author, version, and timestamp"
+  },
+    
+  "Color Swatch": {
+    "prefix": "color-swatch",
+    "scope": "markdown",
+    "body": [
+      "<span style=\"display:inline-block;width:1em;height:1em;background:#cc66ff;border-radius:2px;margin-right:4px;\"></span>"
+    ],
+    "description": "Insert a colored swatch element"
+  },
+
+  "Color Box Customizable": {
+    "prefix": "color-box",
+    "scope": "markdown",
+    "body": [
+      "<span style=\"display:inline-block;width:1em;height:1em;background:${1:#cc66ff};border-radius:2px;margin-right:4px;\"></span>"
+    ],
+    "description": "Insert a customizable colored box"
+  },
+
+  // === Reds ===
+  "CPU3": {
+    "prefix": "C3",
+    "scope": "markdown",
+    "body": [
+      "<span style=\"display:inline-block;width:1em;height:1em;background:#99d98c;border-radius:2px;margin-right:4px;\"></span>"
+    ],
+    "description": "Deep Red (#B30000)"
+  },
+  "CPU2": {
+    "prefix": "C2",
+    "scope": "markdown",
+    "body": [
+      "<span style=\"display:inline-block;width:1em;height:1em;background:#6a994e;border-radius:2px;margin-right:4px;\"></span>"
+    ],
+    "description": "Bright Red (#FF4D4D)"
+  },
+  "CPU1": {
+    "prefix": "C1",
+    "scope": "markdown",
+    "body": [
+      "<span style=\"display:inline-block;width:1em;height:1em;background:#386641;border-radius:2px;margin-right:4px;\"></span>"
+    ],
+    "description": "Warm Crimson (#FF6666)"
+  },
+
+  // === Greens ===
+  "IO3": {
+    "prefix":"I3",
+    "scope": "markdown",
+    "body": [
+      "<span style=\"display:inline-block;width:1em;height:1em;background:#b23a48;border-radius:2px;margin-right:4px;\"></span>"
+    ],
+    "description": "Emerald Green (#00CC44)"
+  },
+  "IO2": {
+    "prefix": "I2",
+    "scope": "markdown",
+    "body": [
+      "<span style=\"display:inline-block;width:1em;height:1em;background:,#8c2f39;border-radius:2px;margin-right:4px;\"></span>"
+    ],
+    "description": "Neon Green (#4DFF88)"
+  },
+  "IO1": {
+    "prefix": "I1",
+    "scope": "markdown",
+    "body": [
+      "<span style=\"display:inline-block;width:1em;height:1em;background:#461220;border-radius:2px;margin-right:4px;\"></span>"
+    ],
+    "description": "Matrix Green (#66FF66)"
+  },
+
+  // === Blues ===
+  "GPU3": {
+    "prefix": "G3",
+    "scope": "markdown",
+    "body": [
+      "<span style=\"display:inline-block;width:1em;height:1em;background:#;border-radius:2px;margin-right:4px;\"></span>"
+    ],
+    "description": "Deep Azure (#0055CC)"
+  },
+  "GPU2": {
+    "prefix": "G2",
+    "scope": "markdown",
+    "body": [
+      "<span style=\"display:inline-block;width:1em;height:1em;background:#4ea5ff;border-radius:2px;margin-right:4px;\"></span>"
+    ],
+    "description": "Electric Blue (#4DA6FF)"
+  },
+  "GPU1": {
+    "prefix": "G1",
+    "scope": "markdown",
+    "body": [
+      "<span style=\"display:inline-block;width:1em;height:1em;background:#207bff;border-radius:2px;margin-right:4px;\"></span>"
+    ],
+    "description": "Sky Blue (#66CCFF)"
+  }
+}
+

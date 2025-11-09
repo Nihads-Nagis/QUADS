@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.autoSave": "afterDelay",
+		"files.autoSaveDelay": 5000,
+		"workbench.editor.autoLockGroups": {
+			"workbench.editor.chatSession": false
+		}
+	}
+}
