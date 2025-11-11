@@ -22,6 +22,7 @@
     "@react-three/drei": "^10.7.6",
     "@react-three/fiber": "^9.4.0",
     "clsx": "^2.0.0",
+    "hash": "^0.2.1",
     "katex": "^0.16.25",
     "leva": "^0.10.1",
     "prism-react-renderer": "^2.3.0",
