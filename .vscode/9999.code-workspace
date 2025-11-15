@@ -10,5 +10,20 @@
 		"workbench.editor.autoLockGroups": {
 			"workbench.editor.chatSession": false
 		}
-	}
+	},
+	"workbench.reduceMotion": "on",
+	"files.hotExit": "off",
+	"files.restoreUndoStack": false,
+	"workbench.editor.restoreViewState": false,
+	"workbench.startupEditor": "none",
+	"telemetry.telemetryLevel": "off",
+	"update.mode": "none",
+	"update.enableWindowsBackgroundUpdates": false,
+	"update.showReleaseNotes": false,
+	"workbench.enableExperiments": false,
+	"workbench.settings.enableNaturalLanguageSearch": false,
+
+
+
+
 }

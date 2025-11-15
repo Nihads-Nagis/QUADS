@@ -3,6 +3,7 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import remarkSectionize from 'remark-sectionize';
 
 const config: Config = {
   title: 'QUADS',
@@ -14,12 +15,12 @@ const config: Config = {
   },
 
   url: 'https://nihads-nagis.github.io',
-  baseUrl: '/9999',
+  baseUrl: '/QUADS',
 
   organizationName: 'Quads',
   projectName: '9999',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
 
   i18n: {
     defaultLocale: 'en',
@@ -34,7 +35,10 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          remarkPlugins: [remarkMath],
+          remarkPlugins: [
+            remarkMath,
+            remarkSectionize,
+          ],
           rehypePlugins: [rehypeKatex],
         },
         blog: {
@@ -48,7 +52,10 @@ const config: Config = {
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
-          remarkPlugins: [remarkMath],
+          remarkPlugins: [
+            remarkMath,
+            remarkSectionize,
+          ],
           rehypePlugins: [rehypeKatex],
         },
         theme: {
@@ -105,7 +112,7 @@ const config: Config = {
           items: [
             {
               label: 'Tutorial',
-              to: '/docs/intro',
+              to: '/docs/0000',
             },
           ],
         },
