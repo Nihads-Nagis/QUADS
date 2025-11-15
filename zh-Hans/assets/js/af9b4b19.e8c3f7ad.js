@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunk_9999=globalThis.webpackChunk_9999||[]).push([[3863],{9716:e=>{e.exports=JSON.parse('{"tags":[{"label":"guide","permalink":"/QUADS/zh-Hans/docs/tags/guide","count":12},{"label":"reference","permalink":"/QUADS/zh-Hans/docs/tags/reference","count":12}]}')}}]);

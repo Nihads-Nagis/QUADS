@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunk_9999=globalThis.webpackChunk_9999||[]).push([[1903],{1912:s=>{s.exports=JSON.parse('{"blogBasePath":"/QUADS/zh-Hans/blog","blogTitle":"Blog","authorsListPath":"/QUADS/zh-Hans/blog/authors"}')}}]);
