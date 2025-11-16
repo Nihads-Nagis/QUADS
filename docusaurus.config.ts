@@ -15,7 +15,7 @@ const config: Config = {
   },
 
   url: 'https://nihads-nagis.github.io',
-  baseUrl: '/QUADS',
+  baseUrl: '/QUADS/',
 
   organizationName: 'Quads',
   projectName: '9999',
