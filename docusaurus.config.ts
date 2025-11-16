@@ -34,7 +34,9 @@ const config: Config = {
   plugins: [
   
     // '@r74tech/docusaurus-plugin-panzoom',
-      require.resolve('./src/components/docusaurus-plugin-panzoom'),
+      // require.resolve('./src/components/docusaurus-plugin-panzoom'),
+      require.resolve('./src/components/docusaurus-plugin-panzoom/index.ts'),
+
 
 ],
 
