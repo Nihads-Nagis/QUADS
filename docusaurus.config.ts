@@ -26,6 +26,17 @@ const config: Config = {
     defaultLocale: 'en',
     locales: ['en', 'zh-Hans'],
   },
+  markdown:{
+    mermaid: true
+  },
+  themes: ['@docusaurus/theme-mermaid'],
+
+  plugins: [
+  
+    // '@r74tech/docusaurus-plugin-panzoom',
+      require.resolve('./src/components/docusaurus-plugin-panzoom'),
+
+],
 
   presets: [
     [
@@ -75,10 +86,29 @@ const config: Config = {
   ],
 
   themeConfig: {
+   zoom: {
+  selectors: [
+    // 'svg[id^="mermaid-svg"]',                 // mermaid-generated svg root
+    '.docusaurus-mermaid-container svg',      // docusaurus wrapper variant
+    // '.mermaid > svg',                         // fallback safe selector
+    '.drawio',                                // keep drawio if you use it
+  ],
+  wrap: true,
+  timeout: 1000,
+  excludeClass: 'panzoom-exclude',
+  toolbar: { enabled: true, position: 'top-right', opacity: 0.4 },
+  enableWheelZoom: true,
+  enableDoubleClickResetZoom: true,
+  minScale: 0.5,
+  maxScale: 7,    
+    // You can also pass any options supported by @panzoom/panzoom
+    // See: https://github.com/timmywil/panzoom for available options
+  },
     image: 'img/docusaurus-social-card.jpg',
     colorMode: {
       respectPrefersColorScheme: true,
     },
+
     navbar: {
       title: 'My Site',
       logo: {
@@ -112,7 +142,7 @@ const config: Config = {
           items: [
             {
               label: 'Tutorial',
-              to: '/docs/0000',
+              to: '/docs/',
             },
           ],
         },

@@ -9,4 +9,9 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
+  "include": [
+    "src",
+    "src/components/docusaurus-plugin-panzoom", "static/img/panzoom/zoom-in.ts", "static/img/panzoom/zoom-out.ts", "static/img/panzoom/zoom-reset.ts",   // <--- add your forked plugin folder here
+  ]
+  
 }

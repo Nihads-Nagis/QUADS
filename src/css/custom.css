@@ -28,3 +28,82 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* ----------------------------------------------------
+   PANZOOM TOOLBAR FRAME + VERTICAL STACKED BUTTONS
+   ---------------------------------------------------- */
+
+/* Outer frame that holds the toolbar */
+.panzoom-toolbar-frame {
+  position: absolute;
+  display: flex;
+  flex-direction: column;          /* Stack vertically */
+  gap: 8px;                        /* Space between buttons */
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 1000;
+
+  /* Subtle background so it doesn’t obstruct diagrams */
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+
+  /* Slight border + soft shadow */
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.10);
+
+  /* Fade in only on hover */
+  opacity: 0.25;
+  transition: opacity 140ms ease;
+}
+
+.panzoom-toolbar-frame:hover {
+  opacity: 1;
+}
+
+/* Toolbar inside the frame (vertical layout) */
+.panzoom-toolbar {
+  display: flex;
+  flex-direction: column;    /* Vertical stack */
+  gap: 6px;
+  background: none;          /* Frame handles the bg now */
+  padding: 0;
+  box-shadow: none;
+  opacity: 1;                /* Frame controls opacity */
+}
+
+/* Position variants */
+.panzoom-toolbar-frame.top-right    { top: 12px; right: 12px; }
+.panzoom-toolbar-frame.top-left     { top: 12px; left: 12px; }
+.panzoom-toolbar-frame.bottom-right { bottom: 12px; right: 12px; }
+.panzoom-toolbar-frame.bottom-left  { bottom: 12px; left: 12px; }
+
+/* Buttons */
+.panzoom-toolbar button {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.12);
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Soft shadow so button is visible but not intrusive */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.panzoom-toolbar button:hover {
+  background: rgba(0,0,0,0.06);
+}
+
+.panzoom-toolbar button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Make sure toolbar ignores panzoom pointer handling */
+.panzoom-exclude {
+  pointer-events: auto !important;
+}
