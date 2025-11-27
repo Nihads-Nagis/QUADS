@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunk_9999=globalThis.webpackChunk_9999||[]).push([[1117],{2764:e=>{e.exports=JSON.parse('{"categoryGeneratedIndex":{"title":"9999","description":"5 minutes to learn the most important Docusaurus concepts.","slug":"/","permalink":"/QUADS/","sidebar":"tutorialSidebar","navigation":{"next":{"title":"90. Prelude","permalink":"/QUADS/90"}}}}')}}]);
