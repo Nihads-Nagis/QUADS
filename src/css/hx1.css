@@ -1,0 +1,383 @@
+/* hx.css - Refined 3D Color System */
+.hx-table-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  background: transparent;
+  border-radius: 12px;
+  position: relative;
+  z-index: 1;
+  padding: 4px; /* Master container padding */
+}
+
+/* 3D Depth Layers with subtle padding */
+.hx-depth-1 {
+  box-shadow: 
+    0 1px 2px rgba(0,0,0,0.08),
+    0 1px 1px rgba(0,0,0,0.12);
+  background: var(--ifm-background-surface-color);
+  border-radius: 8px;
+  padding: 2px; /* Subtle inner padding */
+  position: relative;
+  z-index: 2;
+  transition: all 0.15s ease-out;
+}
+
+.hx-depth-2 {
+  box-shadow: 
+    0 2px 4px rgba(0,0,0,0.12),
+    0 2px 3px rgba(0,0,0,0.16);
+  background: var(--ifm-background-surface-color);
+  border-radius: 8px;
+  padding: 3px; /* Slightly more depth */
+  position: relative;
+  z-index: 3;
+  transition: all 0.15s ease-out;
+}
+
+.hx-depth-3 {
+  box-shadow: 
+    0 4px 8px rgba(0,0,0,0.15),
+    0 3px 6px rgba(0,0,0,0.18);
+  background: var(--ifm-background-surface-color);
+  border-radius: 8px;
+  padding: 4px; /* Even more depth */
+  position: relative;
+  z-index: 4;
+  transition: all 0.15s ease-out;
+}
+
+/* Color spectrum with proper distribution */
+.hx-item.H0 { --hue: 0; }      /* Red */
+.hx-item.H1 { --hue: 10; }
+.hx-item.H2 { --hue: 20; }
+.hx-item.H3 { --hue: 30; }     /* Orange-Red */
+.hx-item.H4 { --hue: 40; }
+.hx-item.H5 { --hue: 50; }     /* Orange */
+.hx-item.H6 { --hue: 60; }
+.hx-item.H7 { --hue: 70; }     /* Orange-Yellow */
+.hx-item.H8 { --hue: 80; }
+.hx-item.H9 { --hue: 90; }     /* Yellow */
+.hx-item.H10 { --hue: 100; }
+.hx-item.H11 { --hue: 110; }   /* Yellow-Green */
+.hx-item.H12 { --hue: 120; }   /* Green */
+.hx-item.H13 { --hue: 130; }
+.hx-item.H14 { --hue: 140; }   /* Green-Cyan */
+.hx-item.H15 { --hue: 150; }
+.hx-item.H16 { --hue: 160; }   /* Cyan */
+.hx-item.H17 { --hue: 170; }
+.hx-item.H18 { --hue: 180; }   /* Blue-Cyan */
+.hx-item.H19 { --hue: 190; }
+.hx-item.H20 { --hue: 200; }   /* Blue */
+.hx-item.H21 { --hue: 210; }
+.hx-item.H22 { --hue: 220; }   /* Blue-Violet */
+.hx-item.H23 { --hue: 230; }
+.hx-item.H24 { --hue: 240; }   /* Violet */
+.hx-item.H25 { --hue: 250; }
+.hx-item.H26 { --hue: 260; }   /* Violet-Magenta */
+.hx-item.H27 { --hue: 270; }
+.hx-item.H28 { --hue: 280; }   /* Magenta */
+.hx-item.H29 { --hue: 290; }
+.hx-item.H30 { --hue: 300; }   /* Magenta-Red */
+.hx-item.H31 { --hue: 310; }
+.hx-item.H32 { --hue: 320; }
+.hx-item.H33 { --hue: 330; }
+.hx-item.H34 { --hue: 340; }
+.hx-item.H35 { --hue: 350; }
+.hx-item.H36 { --hue: 360; }   /* Back to Red */
+.hx-item.H37 { --hue: 370; }
+.hx-item.H38 { --hue: 380; }
+.hx-item.H39 { --hue: 390; }   /* Extended Violet */
+
+
+/* Base item styling with glow instead of border */
+.hx-item {
+  --base-color: hsl(var(--hue), 85%, 55%);
+  --dimmed-color: hsl(var(--hue), 60%, 35%);
+  --glow-color: hsl(var(--hue), 100%, 65%);
+  
+  /* Replace border with glow */
+  background: transparent;
+  padding: 0.75rem 1rem;
+  margin: 0;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  height: 48px;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 2;
+  
+  /* Glow effect on left */
+  box-shadow: 
+    inset 2px 0 0 0 hsla(var(--hue), 85%, 55%, 0.3),
+    inset 0 0 0 0 transparent;
+}
+
+/* Hover state - Very subtle movement */
+.hx-item:not(.locked):hover {
+  background: hsla(var(--hue), 70%, 50%, 0.06);
+  height: auto;
+  min-height: 48px;
+  z-index: 5;
+  
+  /* Enhanced glow on hover */
+  box-shadow: 
+    inset 3px 0 0 0 hsla(var(--hue), 85%, 55%, 0.6),
+    inset 0 0 12px 0 hsla(var(--hue), 85%, 55%, 0.1);
+  
+  /* Very subtle transform */
+  transform: translateZ(4px) scale(1.002);
+}
+
+/* Content expansion */
+.hx-item:not(.locked):hover .hx-content {
+  max-height: 500px;
+  opacity: 1;
+  margin-bottom: 0.5rem;
+}
+
+/* Locked states */
+.hx-item.locked {
+  /* Dimmed glow */
+  box-shadow: 
+    inset 2px 0 0 0 hsla(var(--hue), 60%, 35%, 0.2),
+    inset 0 0 0 0 transparent;
+  background: transparent;
+  opacity: 0.7;
+  cursor: not-allowed;
+  z-index: 1;
+}
+
+.hx-item.locked:hover {
+  opacity: 0.8;
+  height: 48px;
+  background: hsla(var(--hue), 40%, 30%, 0.04);
+  z-index: 3;
+  
+  /* Slightly enhanced glow */
+  box-shadow: 
+    inset 2px 0 0 0 hsla(var(--hue), 60%, 35%, 0.3),
+    inset 0 0 8px 0 hsla(var(--hue), 60%, 35%, 0.05);
+}
+
+/* Danger states */
+.hx-item.danger {
+  box-shadow: 
+    inset 2px 0 0 0 hsla(var(--hue), 85%, 55%, 0.4),
+    inset 0 0 0 0 transparent;
+  background: transparent;
+  z-index: 2;
+}
+
+.hx-item.danger:hover {
+  height: 48px;
+  background: hsla(var(--hue), 70%, 50%, 0.08);
+  z-index: 4;
+  
+  /* Pulsing glow for danger */
+  box-shadow: 
+    inset 3px 0 0 0 hsla(var(--hue), 85%, 55%, 0.7),
+    inset 0 0 15px 0 hsla(var(--hue), 85%, 55%, 0.15);
+}
+
+/* Header with consistent vertical alignment */
+.hx-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  gap: 0.75rem;
+  height: 24px;
+}
+
+/* Sphere with more subtle effects */
+.hx-sphere {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: hsla(var(--hue), 85%, 55%, 0.9);
+  /* Very subtle shadow */
+  box-shadow: 
+    0 0 0 1px hsla(var(--hue), 85%, 55%, 0.2),
+    0 1px 2px hsla(var(--hue), 85%, 55%, 0.3);
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+  z-index: 3;
+}
+
+.hx-item:not(.locked):hover .hx-sphere {
+  background: hsla(var(--hue), 85%, 55%, 1);
+  /* Slightly enhanced shadow */
+  box-shadow: 
+    0 0 0 1px hsla(var(--hue), 85%, 55%, 0.4),
+    0 2px 4px hsla(var(--hue), 85%, 55%, 0.4);
+  transform: scale(1.03);
+}
+
+.hx-item.locked .hx-sphere {
+  background: hsla(var(--hue), 60%, 35%, 0.7);
+  box-shadow: 
+    0 0 0 1px hsla(var(--hue), 60%, 35%, 0.15),
+    0 1px 1px hsla(var(--hue), 60%, 35%, 0.2);
+}
+
+.hx-item.danger .hx-sphere {
+  animation: hx-pulse-subtle 2s infinite;
+}
+
+@keyframes hx-pulse-subtle {
+  0%, 100% { 
+    background: hsla(var(--hue), 85%, 55%, 0.9);
+    box-shadow: 
+      0 0 0 1px hsla(var(--hue), 85%, 55%, 0.2),
+      0 1px 2px hsla(var(--hue), 85%, 55%, 0.3);
+  }
+  50% { 
+    background: hsla(var(--hue), 85%, 55%, 0.8);
+    box-shadow: 
+      0 0 0 1px hsla(var(--hue), 85%, 55%, 0.3),
+      0 1px 3px hsla(var(--hue), 85%, 55%, 0.4);
+  }
+}
+
+/* Icons */
+.hx-icon {
+  width: 11px;
+  height: 11px;
+  filter: brightness(0) invert(1);
+}
+
+/* Title with faded color */
+.hx-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+  color: hsla(var(--hue), 85%, 55%, 0.85); /* More faded */
+  flex: 1;
+  transition: color 0.15s ease;
+}
+
+.hx-item:not(.locked):hover .hx-title {
+  color: hsla(var(--hue), 85%, 55%, 0.95); /* Slightly less faded on hover */
+}
+
+.hx-item.locked .hx-title {
+  color: hsla(var(--hue), 60%, 35%, 0.7); /* More faded for locked */
+}
+
+/* Content area */
+.hx-content {
+  margin-left: 2rem;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hx-content p {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.875rem;
+}
+
+.hx-content ul, .hx-content ol {
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.hx-content li {
+  margin-bottom: 0.1rem;
+  font-size: 0.875rem;
+}
+
+/* Summary with faded border */
+.hx-summary {
+  font-style: italic;
+  color: var(--ifm-color-emphasis-600);
+  border-left: 1px solid hsla(var(--hue), 60%, 35%, 0.3); /* More faded */
+  padding-left: 0.5rem;
+  margin: 0.25rem 0 0 2rem;
+  font-size: 0.75rem;
+}
+
+/* Status badge with faded colors */
+.hx-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.375rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  background: hsla(var(--hue), 85%, 55%, 0.08); /* More faded */
+  color: hsla(var(--hue), 85%, 55%, 0.8); /* More faded */
+  border: 1px solid hsla(var(--hue), 85%, 55%, 0.15); /* More faded */
+  transition: all 0.15s ease;
+}
+
+.hx-item:not(.locked):hover .hx-status {
+  background: hsla(var(--hue), 85%, 55%, 0.12); /* Slightly less faded */
+  color: hsla(var(--hue), 85%, 55%, 0.9);
+}
+
+.hx-item.locked .hx-status {
+  background: hsla(var(--hue), 60%, 35%, 0.06); /* More faded */
+  color: hsla(var(--hue), 60%, 35%, 0.65); /* More faded */
+  border: 1px solid hsla(var(--hue), 60%, 35%, 0.1); /* More faded */
+}
+
+.hx-item.danger .hx-status {
+  background: hsla(var(--hue), 85%, 55%, 0.1); /* More faded */
+  color: hsla(var(--hue), 85%, 55%, 0.8); /* More faded */
+  animation: hx-status-subtle 2s infinite;
+}
+
+@keyframes hx-status-subtle {
+  0%, 100% { 
+    background: hsla(var(--hue), 85%, 55%, 0.1);
+    border-color: hsla(var(--hue), 85%, 55%, 0.15);
+  }
+  50% { 
+    background: hsla(var(--hue), 85%, 55%, 0.15);
+    border-color: hsla(var(--hue), 85%, 55%, 0.25);
+  }
+}
+
+/* Compact vertical rhythm */
+.hx-item + .hx-item {
+  border-top: 1px solid var(--ifm-color-emphasis-100);
+}
+
+/* Dark mode refinements */
+[data-theme='dark'] .hx-depth-1 {
+  box-shadow: 
+    0 1px 2px rgba(0,0,0,0.15),
+    0 1px 1px rgba(0,0,0,0.2);
+}
+
+[data-theme='dark'] .hx-depth-2 {
+  box-shadow: 
+    0 2px 4px rgba(0,0,0,0.2),
+    0 2px 3px rgba(0,0,0,0.25);
+}
+
+[data-theme='dark'] .hx-depth-3 {
+  box-shadow: 
+    0 4px 8px rgba(0,0,0,0.25),
+    0 3px 6px rgba(0,0,0,0.3);
+}
+
+[data-theme='dark'] .hx-item + .hx-item {
+  border-top-color: var(--ifm-color-emphasis-200);
+}
+
+/* Ensure depth containers have proper spacing */
+.hx-depth-1 + .hx-depth-1,
+.hx-depth-2 + .hx-depth-2,
+.hx-depth-3 + .hx-depth-3 {
+  margin-top: 2px;
+}

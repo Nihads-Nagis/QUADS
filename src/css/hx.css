@@ -1,4 +1,15 @@
 /* Add this to your hx.css to ensure depth classes work properly */
+/* hx.css - 3D Depth Color System */
+.hx-table-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  background: transparent;
+  border-radius: 12px;
+  position: relative;
+  z-index: 1;
+}
+
 .hx-depth-1, .hx-depth-2, .hx-depth-3 {
   position: relative;
 }
@@ -15,16 +26,7 @@
 }
 
 
-/* hx.css - 3D Depth Color System */
-.hx-table-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 2rem auto;
-  background: transparent;
-  border-radius: 12px;
-  position: relative;
-  z-index: 1;
-}
+
 
 /* 3D Depth Layers */
 .hx-depth-1 {
