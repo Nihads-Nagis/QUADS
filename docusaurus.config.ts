@@ -72,7 +72,10 @@ const config: Config = {
           rehypePlugins: [rehypeKatex],
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: [
+            require.resolve('./src/css/custom.css'),
+            require.resolve('./src/css/hx.css'),
+          ],
         },
       } satisfies Preset.Options,
     ],

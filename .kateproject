@@ -1,0 +1,5 @@
+{
+  "name": "QUADS",
+  "files": [ "src", "docs", "scripts" ],
+  "exclude": [ "node_modules", ".git" ]
+}

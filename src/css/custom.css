@@ -5,30 +5,103 @@
  */
 
 /* You can override the default Infima variables here. */
+/* src/css/custom.css */
+
+
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  /* Primary Colors - Material Design Blue */
+  --ifm-color-primary: #1976d2;
+  --ifm-color-primary-dark: #1565c0;
+  --ifm-color-primary-darker: #0d47a1;
+  --ifm-color-primary-darkest: #0a2e6b;
+  --ifm-color-primary-light: #42a5f5;
+  --ifm-color-primary-lighter: #64b5f6;
+  --ifm-color-primary-lightest: #90caf9;
+  
+  /* Secondary Colors - Material Design Pink */
+  --ifm-color-secondary: #dc004e;
+  --ifm-color-secondary-dark: #c51162;
+  --ifm-color-secondary-darker: #ad1457;
+  --ifm-color-secondary-darkest: #880e4f;
+  --ifm-color-secondary-light: #e91e63;
+  --ifm-color-secondary-lighter: #ec407a;
+  --ifm-color-secondary-lightest: #f06292;
+  
+  /* Background colors */
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #f5f5f5;
+  
+  /* Text colors */
+  --ifm-font-color-base: #1a1a1a;
+  --ifm-font-color-base-inverse: #ffffff;
+  --ifm-font-color-secondary: #666666;
+  
+  /* Code colors */
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-code-background: rgba(25, 118, 210, 0.08);
+  
+  /* Navbar colors */
+  --ifm-navbar-background-color: var(--ifm-background-color);
+  --ifm-navbar-link-color: var(--ifm-font-color-base);
+  
+  /* Footer colors */
+  --ifm-footer-background-color: #fafafa;
+  --ifm-footer-link-color: var(--ifm-font-color-base);
+  
+  /* Card colors */
+  --ifm-card-background-color: var(--ifm-background-color);
+  
+  /* Border colors */
+  --ifm-border-color: #e0e0e0;
+  
+  /* Success, Warning, Error colors */
+  --ifm-color-success: #4caf50;
+  --ifm-color-info: #2196f3;
+  --ifm-color-warning: #ff9800;
+  --ifm-color-danger: #f44336;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #90caf9;
+  --ifm-color-primary-dark: #64b5f6;
+  --ifm-color-primary-darker: #42a5f5;
+  --ifm-color-primary-darkest: #2196f3;
+  --ifm-color-primary-light: #bbdefb;
+  --ifm-color-primary-lighter: #e3f2fd;
+  --ifm-color-primary-lightest: #f5fbff;
+  
+  --ifm-color-secondary: #f48fb1;
+  --ifm-color-secondary-dark: #f06292;
+  --ifm-color-secondary-darker: #ec407a;
+  --ifm-color-secondary-darkest: #e91e63;
+  --ifm-color-secondary-light: #f8bbd9;
+  --ifm-color-secondary-lighter: #fce4ec;
+  --ifm-color-secondary-lightest: #fff;
+  
+  --ifm-background-color: #121212;
+  --ifm-background-surface-color: #1e1e1e;
+  --ifm-font-color-base: #e0e0e0;
+  --ifm-font-color-secondary: #a0a0a0;
+  
+  --ifm-code-background: rgba(144, 202, 249, 0.12);
+  
+  --ifm-navbar-background-color: var(--ifm-background-color);
+  --ifm-footer-background-color: #1a1a1a;
+  --ifm-card-background-color: var(--ifm-background-surface-color);
+  --ifm-border-color: #333333;
 }
 
+
+
+/* Ensure MUI components blend well with Docusaurus */
+.mui-component {
+  font-family: var(--ifm-font-family-base);
+}
+
+/* Smooth transitions for theme switching */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
 /* ----------------------------------------------------
    PANZOOM TOOLBAR FRAME + VERTICAL STACKED BUTTONS
    ---------------------------------------------------- */
@@ -107,3 +180,4 @@
 .panzoom-exclude {
   pointer-events: auto !important;
 }
+
