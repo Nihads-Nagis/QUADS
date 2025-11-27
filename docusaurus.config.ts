@@ -10,15 +10,14 @@ const config: Config = {
   tagline: 'The QuadSQuad',
   favicon: 'img/favicon.ico',
 
-  future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
-  },
+  future: { v4: true },
 
+  // Works for BOTH localhost & GitHub Pages
   url: 'https://nihads-nagis.github.io',
   baseUrl: '/QUADS/',
 
-  organizationName: 'Quads',
-  projectName: '9999',
+  organizationName: 'Nihads-Nagis',
+  projectName: 'QUADS',
 
   onBrokenLinks: 'warn',
 
@@ -26,49 +25,34 @@ const config: Config = {
     defaultLocale: 'en',
     locales: ['en', 'zh-Hans'],
   },
-  markdown:{
-    mermaid: true
-  },
+
+  markdown: { mermaid: true },
   themes: ['@docusaurus/theme-mermaid'],
 
   plugins: [
-  
-    // '@r74tech/docusaurus-plugin-panzoom',
-      // require.resolve('./src/components/docusaurus-plugin-panzoom'),
-      require.resolve('./src/components/docusaurus-plugin-panzoom/index.ts'),
-
-
-],
+    require.resolve('./src/components/docusaurus-plugin-panzoom/index.ts'),
+  ],
 
   presets: [
     [
       'classic',
       {
         docs: {
+          routeBasePath: '/',         // docs = homepage
           sidebarPath: './sidebars.ts',
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          remarkPlugins: [
-            remarkMath,
-            remarkSectionize,
-          ],
+          editUrl: 'https://github.com/Nihads-Nagis/QUADS/tree/main/',
+          remarkPlugins: [remarkMath, remarkSectionize],
           rehypePlugins: [rehypeKatex],
         },
         blog: {
+          routeBasePath: '/blog',
           showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          feedOptions: { type: ['rss', 'atom'], xslt: true },
+          editUrl: 'https://github.com/Nihads-Nagis/QUADS/tree/main/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
-          remarkPlugins: [
-            remarkMath,
-            remarkSectionize,
-          ],
+          remarkPlugins: [remarkMath, remarkSectionize],
           rehypePlugins: [rehypeKatex],
         },
         theme: {
@@ -81,7 +65,6 @@ const config: Config = {
     ],
   ],
 
-  // Global KaTeX stylesheet for math rendering
   stylesheets: [
     {
       href: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css',
@@ -91,100 +74,72 @@ const config: Config = {
   ],
 
   themeConfig: {
-   zoom: {
-  selectors: [
-    // 'svg[id^="mermaid-svg"]',                 // mermaid-generated svg root
-    '.docusaurus-mermaid-container svg',      // docusaurus wrapper variant
-    // '.mermaid > svg',                         // fallback safe selector
-    '.drawio',                                // keep drawio if you use it
-  ],
-  wrap: true,
-  timeout: 1000,
-  excludeClass: 'panzoom-exclude',
-  toolbar: { enabled: true, position: 'top-right', opacity: 0.4 },
-  enableWheelZoom: true,
-  enableDoubleClickResetZoom: true,
-  minScale: 0.5,
-  maxScale: 7,    
-    // You can also pass any options supported by @panzoom/panzoom
-    // See: https://github.com/timmywil/panzoom for available options
-  },
-    image: 'img/docusaurus-social-card.jpg',
-    colorMode: {
-      respectPrefersColorScheme: true,
+    zoom: {
+      selectors: [
+        '.docusaurus-mermaid-container svg',
+        '.drawio',
+      ],
+      wrap: true,
+      timeout: 1000,
+      excludeClass: 'panzoom-exclude',
+      toolbar: { enabled: true, position: 'top-right', opacity: 0.4 },
+      enableWheelZoom: true,
+      enableDoubleClickResetZoom: true,
+      minScale: 0.5,
+      maxScale: 7,
     },
 
+    image: 'img/docusaurus-social-card.jpg',
+
+    colorMode: { respectPrefersColorScheme: true },
+
     navbar: {
-      title: 'My Site',
-      logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
-      },
+      title: 'QUADS',
+      logo: { alt: 'QUADS Logo', src: 'img/logo.svg' },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Tutorial',
-        },
-        {to: '/blog', label: 'Blog', position: 'left'},
-        {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
-        },
-        {
-          type: 'localeDropdown',
-          position: 'right',
-        },
+        { to: '/blog', label: 'Blog', position: 'left' },
+        { type: 'localeDropdown', position: 'right' },
       ],
     },
+
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Documentation',
           items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/',
-            },
+            { label: 'Getting Started', to: '/' },
           ],
         },
         {
           title: 'Community',
           items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
+            { label: 'Stack Overflow', href: 'https://stackoverflow.com/questions/tagged/docusaurus' },
+            { label: 'Discord', href: 'https://discordapp.com/invite/docusaurus' },
+            { label: 'X', href: 'https://x.com/docusaurus' },
           ],
         },
         {
           title: 'More',
           items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
+            { label: 'Blog', to: '/blog' },
+            { label: 'GitHub', href: 'https://github.com/Nihads-Nagis/QUADS' },
           ],
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} QUADSquad. Built with Belief.`,
     },
+
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
 };
+
+if (process.env.NODE_ENV === 'development') {
+  config.baseUrl = '/';
+  config.url = 'http://localhost:3000/';
+}
 
 export default config;
